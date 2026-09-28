@@ -37,8 +37,12 @@ console.log(sumRange(4, 4));   // 4
 // Return an array counting down from n to 1.
 // Use a while loop, not a for loop.
 function countdown(n) {
-  // TODO: your code here
-
+  let number = n;
+  x= []
+  while (number > 0) {
+    x.push(number)
+    number--; // subtract 1 each time
+  }
 }
 
 console.log(countdown(5)); // [5, 4, 3, 2, 1]
