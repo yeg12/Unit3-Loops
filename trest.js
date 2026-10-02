@@ -1,13 +1,16 @@
 function slots(q, m1, m2, m3) {
   let x = 0;
   while (q > 0) {
-    q -= 1;
-    m1 += 1;
-    x += 1;
+    if (q > 0) {
+      q -= 1;
+      m1 += 1;
+      x += 1;
+    
     if (m1 === 35) {
-      q -= 30;
+      q += 30;
       m1 = 0;
     }
+  }
     if (q > 0) {
       q -= 1;
       m2 += 1;
@@ -27,6 +30,6 @@ function slots(q, m1, m2, m3) {
       }
     }
   }
-  return x
+  return x;
 }
-console.log("Martha plays ",slots(48, 3, 10, 4)," times ");
+console.log("Martha plays ", slots(77, 4, 9, 3), " times ");
