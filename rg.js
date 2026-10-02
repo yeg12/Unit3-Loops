@@ -76,9 +76,13 @@ console.log(sumRange(4, 4));   // 4
 
 
 function isValidPassword(password) {
-  if (password === "password")
-    console.log("invaild")
-  else if ( 
+  x = 0
+  let counter = 0;
+  if (password === "password"){
+    console.log("invaild")}
+  else 
+    x += 1
+  if ( 
     password === "1"||
     password === "2"||
     password === "3"||
@@ -88,8 +92,15 @@ function isValidPassword(password) {
     password === "7"||
     password === "8"||
     password === "9"||
-    password === "0"||
-    
-  ) 
+    password === "0");
+    x += 1
 
+	for (const character of password) {
+		counter += 1;
+	}
+  if (counter === 8 )
+    x +=1
+  if (x === 3)
+    print ("valid")
 }
+isValidPassword("e2sadhbsaj")
