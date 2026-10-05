@@ -75,32 +75,34 @@ console.log(sumRange(4, 4));   // 4
 
 
 
-function isValidPassword(password) {
-  x = 0
-  let counter = 0;
-  if (password === "password"){
-    console.log("invaild")}
-  else 
-    x += 1
-  if ( 
-    password === "1"||
-    password === "2"||
-    password === "3"||
-    password === "4"||
-    password === "5"||
-    password === "6"||
-    password === "7"||
-    password === "8"||
-    password === "9"||
-    password === "0");
-    x += 1
 
-	for (const character of password) {
-		counter += 1;
-	}
-  if (counter === 8 )
-    x +=1
-  if (x === 3)
-    print ("valid")
+function isValidPassword(password) {
+  let x = 0;
+
+  if (password === "password") {
+    console.log("invalid");
+    return false;
+  }
+  x += 1;
+
+  if (/\d/.test(password)) {
+    x += 1;
+  }
+
+  if (password.length >= 8) {
+    x += 1;
+  }
+
+  if (x === 3) {
+    console.log("valid");
+    return true;
+  }
+
+  console.log("invalid");
+  return false;
 }
-isValidPassword("e2sadhbsaj")
+
+isValidPassword("e2sadhbsaj");
+console.log(isValidPassword("password"));
+console.log(isValidPassword("abc"));
+console.log(isValidPassword("abc12345"));
